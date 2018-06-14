@@ -55,7 +55,7 @@ R = [2, 5, 10, 20, 50]
 plt.figure(figsize=[8, 6])
 for r in R:
     for p in range(len(tempo)-1):
-        dvdt = -V[p]/r + I[p]
+        dvdt = -V[p]/(r*C) + I[p]*C
         V[p+1] = V[p] + dvdt
         
     plt.plot(tempo, V, label=f"R = {r}")
